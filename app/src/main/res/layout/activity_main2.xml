@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.leadeon.zxing.Main2Activity">
+   <android.support.v7.widget.Toolbar
+       android:background="#52b0f4"
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize"
+       android:id="@+id/main_toolabar">
+
+   </android.support.v7.widget.Toolbar>
+    <WebView
+        android:layout_below="@id/main_toolabar"
+        android:paddingTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/web">
+    </WebView>
+</RelativeLayout>
