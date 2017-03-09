@@ -105,13 +105,11 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
 //        vibrate();
 //        mQRCodeView.startSpot();
         if (result!=null&&result.startsWith("http")){
-
             View inflate = getLayoutInflater().inflate(R.layout.activity_main2, null);
 
             head.addView(inflate);
-//            Toolbar title = (Toolbar) inflate.findViewById(R.id.main_toolabar);
+            final Toolbar mtitle = (Toolbar) inflate.findViewById(R.id.main_toolabar);
             WebView webView = (WebView) inflate.findViewById(R.id.web);
-//            result = "http://www.baidu.com";
             webView.getSettings().setJavaScriptEnabled(true);
 
             webView.setWebViewClient(new WebViewClient(){
@@ -136,8 +134,10 @@ public class TestScanActivity extends AppCompatActivity implements QRCodeView.De
             webView.setWebChromeClient(new WebChromeClient(){
                 @Override
                 public void onReceivedTitle(WebView view, String title) {
-                    toolbar.setText(title);
-                    //a textview
+                    if (null!=title)
+                        mtitle.setTitle(title);
+                    else
+                        mtitle.setTitle("扫描结果");
                 }
             });
             webView.loadUrl(result);

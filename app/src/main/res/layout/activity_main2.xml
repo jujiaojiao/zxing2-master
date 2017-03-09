@@ -12,6 +12,10 @@
        android:id="@+id/main_toolabar">
 
    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text"/>
     <WebView
         android:layout_below="@id/main_toolabar"
         android:paddingTop="?attr/actionBarSize"
